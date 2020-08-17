@@ -48,7 +48,18 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   }
 };
 
-function createNewUser(email: string): Promise<void> {
+async function createNewUser(email: string): Promise<void> {
+  const users = await base("users")
+    .select({
+      maxRecords: 1,
+      filterByFormula: `{email} = '${email}'`,
+    })
+    .firstPage();
+
+  if (users.length > 0) {
+    throw new Error("Email already exists");
+  }
+
   return base("users").create([
     {
       fields: {
