@@ -57,7 +57,7 @@ async function createNewUser(email: string): Promise<void> {
     .firstPage();
 
   if (users.length > 0) {
-    throw new Error("Email already exists");
+    throw new Error("EMAIL_ALREADY_EXISTS");
   }
 
   return base("users").create([
