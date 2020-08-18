@@ -3,14 +3,16 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "predev": "yarn non-breaking-spaces",
+    "predev": "yarn enhance-email-templates",
     "dev": "next dev",
-    "prebuild": "yarn non-breaking-spaces",
+    "prebuild": "yarn enhance-email-templates",
     "build": "next build",
     "start": "next start",
     "prettier": "prettier --write \"./**/*.@(js|jsx|ts|tsx|yml|html|css|md|json)\"",
     "prettier:check": "prettier --check \"./**/*.@(js|jsx|ts|tsx|yml|html|css|md|json)\"",
-    "non-breaking-spaces": "ts-node ./scripts/non-breaking-spaces.ts"
+    "enhance-email-templates": "yarn non-breaking-spaces && yarn inject-light-mode",
+    "non-breaking-spaces": "ts-node ./scripts/non-breaking-spaces.ts",
+    "inject-light-mode": "ts-node ./scripts/inject-light-mode.ts"
   },
   "dependencies": {
     "@sendgrid/mail": "^7.2.3",
