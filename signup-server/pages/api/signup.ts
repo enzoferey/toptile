@@ -4,7 +4,6 @@ import path from "path";
 import axios from "axios";
 import sendgrid from "@sendgrid/mail";
 import Airtable from "airtable";
-import cheerio from "cheerio";
 
 // Load Signup email data
 const signupEmailPath = path.resolve(
@@ -14,14 +13,6 @@ const signupEmailPath = path.resolve(
   "signup-email.html"
 );
 const signupEmailHtml = fs.readFileSync(signupEmailPath, "utf8");
-const $ = cheerio.load(signupEmailHtml);
-const signupEmailText = $("html *")
-  .contents()
-  .map(function () {
-    return this.type === "text" ? $(this).text() : "";
-  })
-  .get()
-  .join("\n");
 
 // Setup SendGrid
 sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
@@ -93,7 +84,7 @@ async function sendSignupSuccessEmail(
     to: email,
     from: process.env.SENDGRID_SENDER_EMAIL,
     subject: "Welcome to Toptile !",
-    text: signupEmailText.split("DISCORD_INVITE_LINK").join(inviteLink),
+    text: `Welcome to Toptile !\n\nI'm thrilled to have you on board.\n\nMy goal is to make Toptile the reference community for top percentile people. The community you and me wish had existed for a long time.\n\nI have so many ideas about how to make this a reality. And at the same time no strong opinion about what, when, how, or where. I want you to shape the community and influence its direction.\n\nClick the following button to join our Discord channel and start the conversation:\n\n${inviteLink}\n\nAs an appetizer for the tons of content you will hear about in Toptile, two amazing pieces of related content:\n\n- 95%-ile isn't that good (https://danluu.com/p95-skill/), by Dan Luu\n3-2-1 Thursday newsletter (https://jamesclear.com/3-2-1), by James Clear\n\nI'm looking forward hearing from you,\n\nThis is only the beginning\n\n- Enzo Ferey`,
     html: signupEmailHtml.split("DISCORD_INVITE_LINK").join(inviteLink),
   });
 }
