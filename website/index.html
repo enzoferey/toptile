@@ -136,8 +136,10 @@
             class="Form Form--CallToAction"
             onsubmit="submitEmail(this); return false;"
           >
-            <input class="Form__input" placeholder="Email" />
-            <button class="Form__button" type="submit">join</button>
+            <div class="Form__input-container">
+              <input class="Form__input" placeholder="Email" />
+              <button class="Form__button" type="submit">join</button>
+            </div>
             <p class="Form__error-text"></p>
           </form>
         </div>
@@ -212,7 +214,7 @@
             if (response.success) {
               window.location.href = "success.html";
             } else {
-              if(response.error === "EMAIL_ALREADY_EXISTS") {
+              if (response.error === "EMAIL_ALREADY_EXISTS") {
                 showErrorText("Email is already in use");
               } else {
                 showErrorText("An unexpected error happened, please try again");
