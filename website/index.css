@@ -201,6 +201,8 @@ body {
   opacity: 1; /* Firefox */
 }
 .Form__button {
+  width: 88px;
+
   font-size: 16px;
   line-height: 22px;
   font-weight: 700;
@@ -434,5 +436,61 @@ body {
   .Footer__nav a + a {
     margin-top: 0;
     margin-left: 24px;
+  }
+}
+
+.loading-circles {
+  display: inline-block;
+  position: relative;
+  width: 28px;
+  height: 16px;
+}
+.loading-circles div {
+  position: absolute;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: black;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.loading-circles div:nth-child(1) {
+  left: 0;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.loading-circles div:nth-child(2) {
+  left: 0;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.loading-circles div:nth-child(3) {
+  left: 12px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.loading-circles div:nth-child(4) {
+  left: 24px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(12px, 0);
   }
 }
