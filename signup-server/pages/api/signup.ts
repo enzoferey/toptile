@@ -4,6 +4,27 @@ import path from "path";
 import axios from "axios";
 import sendgrid from "@sendgrid/mail";
 import Airtable from "airtable";
+import Cors from "cors";
+
+// Initializing the cors middleware
+const cors = Cors({
+  origin: process.env.NODE_ENV === "production" ? "https://toptile.life" : "*",
+  methods: ["GET", "POST", "HEAD"],
+});
+
+// Helper method to wait for a middleware to execute before continuing
+// And to throw an error when an error happens in a middleware
+function runMiddleware(req, res, fn) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result) => {
+      if (result instanceof Error) {
+        return reject(result);
+      }
+
+      return resolve(result);
+    });
+  });
+}
 
 // Load Signup email data
 const signupEmailPath = path.resolve(
@@ -25,6 +46,9 @@ const base = new Airtable.base(process.env.AIRTABLE_BASE_ID);
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   try {
+    // Run the middleware
+    await runMiddleware(req, res, cors);
+
     const email = req.body.email;
 
     await createNewUser(email);
@@ -34,6 +58,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     res.statusCode = 200;
     res.json({ success: true });
   } catch (error) {
+    console.log(error);
     res.statusCode = 400;
     res.json({ success: false, error: error.message });
   }
