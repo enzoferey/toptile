@@ -204,7 +204,7 @@
         button.classList.add(".Form__button--loading");
         button.innerText = "...";
 
-        fetch("http://toptile.vercel.app/api/signup", {
+        fetch("https://toptile.vercel.app/api/signup", {
           method: "POST",
           headers: new Headers({ "Content-Type": "application/json" }),
           body: JSON.stringify({ email }),
