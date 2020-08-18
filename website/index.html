@@ -136,8 +136,10 @@
             class="Form Form--CallToAction"
             onsubmit="submitEmail(this); return false;"
           >
-            <input class="Form__input" placeholder="Email" />
-            <button class="Form__button" type="submit">join</button>
+            <div class="Form__input-container">
+              <input class="Form__input" placeholder="Email" />
+              <button class="Form__button" type="submit">join</button>
+            </div>
             <p class="Form__error-text"></p>
           </form>
         </div>
@@ -202,7 +204,7 @@
         button.classList.add(".Form__button--loading");
         button.innerText = "...";
 
-        fetch("http://localhost:3000/api/signup", {
+        fetch("http://toptile.vercel.app/api/signup", {
           method: "POST",
           headers: new Headers({ "Content-Type": "application/json" }),
           body: JSON.stringify({ email }),
@@ -212,7 +214,7 @@
             if (response.success) {
               window.location.href = "success.html";
             } else {
-              if(response.error === "EMAIL_ALREADY_EXISTS") {
+              if (response.error === "EMAIL_ALREADY_EXISTS") {
                 showErrorText("Email is already in use");
               } else {
                 showErrorText("An unexpected error happened, please try again");
