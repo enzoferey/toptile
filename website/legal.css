@@ -1,0 +1,114 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  font-display: fallback;
+  background-color: white;
+}
+
+.Main {
+  padding: 32px 0;
+}
+
+.Container {
+  max-width: 480px;
+  margin: 0 auto;
+
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+@media (min-width: 1024px) {
+  .Container {
+    max-width: 600px;
+
+    padding: 0;
+  }
+}
+
+.BackLink {
+  display: block;
+
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 400;
+  color: black;
+
+  margin-bottom: 32px;
+}
+
+.Footer {
+  padding-top: 32px;
+  padding-bottom: 32px;
+
+  background-color: black;
+}
+.Footer__main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Footer__copy {
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 400;
+  color: white;
+}
+.Footer__nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.Footer__nav a + a {
+  margin-top: 4px;
+}
+.Footer__nav a {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: white;
+}
+
+@media (min-width: 1024px) {
+  .Footer__nav {
+    flex-direction: row;
+  }
+  .Footer__nav a + a {
+    margin-top: 0;
+    margin-left: 24px;
+  }
+}
+
+.Content h1 {
+  font-size: 48px;
+  line-height: 65px;
+  font-weight: 700;
+  color: black;
+
+  margin-bottom: 32px;
+}
+.Content h2 {
+  font-size: 24px;
+  line-height: 33px;
+  font-weight: 700;
+  color: black;
+
+  margin-bottom: 24px;
+}
+.Content ul {
+  margin-bottom: 24px;
+  list-style: disc;
+}
+.Content p,
+.Content li {
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 400;
+  color: black;
+
+  margin-bottom: 24px;
+}
+.Content a {
+  font-size: 18px;
+  line-height: 25px;
+  font-weight: 400;
+  color: black;
+}

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#FF4623" />
+    <meta name="msapplication-TileColor" content="#FF4623" />
+    <meta name="theme-color" content="#FF4623" />
+
+    <!-- Search engines -->
+    <title>
+      Toptile
+    </title>
+    <meta
+      name="description"
+      content="The network for reaching the top percentile."
+    />
+    <meta name="image" content="og-image.png" />
+    <!-- Schema.org for Google -->
+    <meta itemprop="name" content="Toptile" />
+    <meta
+      itemprop="description"
+      content="The network for reaching the top percentile."
+    />
+    <meta itemprop="image" content="og-image.png" />
+    <!-- Twitter -->
+    <meta name="twitter:title" content="Toptile" />
+    <meta
+      name="twitter:description"
+      content="The network for reaching the top percentile."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@toptile_life" />
+    <meta name="twitter:creator" content="@toptile_life" />
+    <meta name="twitter:image" content="og-image.png" />
+    <!-- Open Graph general (Facebook, Pinterest & Google+) -->
+    <meta name="og:title" content="Toptile" />
+    <meta
+      name="og:description"
+      content="The network for reaching the top percentile."
+    />
+    <meta name="og:site_name" content="Toptile" />
+    <meta name="og:image" content="og-image.png" />
+    <meta name="og:url" content="https://toptile.life" />
+    <meta name="og:type" content="website" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="reset.css" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+  </head>
+  <body>
+    <div class="Header">
+      <div class="Container">
+        <div class="Header__main">
+          <h1 class="Header__title">Toptile</h1>
+          <h2 class="Header__subtitle">
+            The network for reaching the top percentile.
+          </h2>
+          <div class="Header__form">
+            <form class="Form" onsubmit="submitEmail(this); return false;">
+              <div class="Form__input-container">
+                <input class="Form__input" placeholder="Email" />
+                <button class="Form__button" type="submit">join</button>
+              </div>
+              <p class="Form__error-text"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="Header__curve Header__curve--mobile">
+        <div>
+          <img src="curve-mobile.svg" />
+        </div>
+      </div>
+      <div class="Header__curve Header__curve--desktop">
+        <div>
+          <img src="curve-desktop.svg" />
+        </div>
+      </div>
+    </div>
+
+    <div class="Content">
+      <div class="Container">
+        <div class="Content__main">
+          <div class="Content__header">
+            <img class="Content__header__enzo-ferey" src="enzo-ferey.jpg" />
+            <h3 class="Content__header__title">
+              Hi, my name is
+              <a href="https://enzoferey.com" target="_blank" rel="noopener"
+                >Enzo</a
+              >
+              <span role="img" aria-label="wave">👋🏻</span>
+              <img
+                class="Content__header__title__about-me-arrow"
+                src="about-me-arrow.png"
+              />
+            </h3>
+          </div>
+          <p class="Content__paragraph">
+            I am obsessed about picking up new skills and pushing them until a
+            certain level. I have been a top player in sports and e-sports, and
+            I apply the same principles on other domains.<br /><br />
+            Sharing my learnings along the way and hearing from people facing
+            similar challenges is something I love.<br /><br />
+            Unfortunately, finding people that share the same level of focus and
+            obsession is hard. Deliberate practice over a long period of time is
+            not common nowadays.<br /><br />
+            Toptile helps you being surrounded by people aiming for the top
+            percentile so you can reach your goals.<br /><br />
+            Everything is yet to be built. By joining today you will get early
+            access to the community and start your journey towards the top.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="CallToAction">
+      <div class="Container">
+        <div class="CallToAction__main">
+          <h3 class="CallToAction__title">Get early access to:</h3>
+          <ul class="CallToAction__package">
+            <li>+ related content</li>
+            <li>+ product updates</li>
+            <li>+ Discord channel</li>
+          </ul>
+          <form
+            class="Form Form--CallToAction"
+            onsubmit="submitEmail(this); return false;"
+          >
+            <input class="Form__input" placeholder="Email" />
+            <button class="Form__button" type="submit">join</button>
+            <p class="Form__error-text"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer class="Footer">
+      <div class="Container">
+        <div class="Footer__main">
+          <p class="Footer__copy">Toptile<br />&copy;2020</p>
+          <nav class="Footer__nav">
+            <a href="terms-of-service.html">Terms of Service</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+          </nav>
+          <a
+            href="https://twitter.com/toptile_life"
+            target="__blank"
+            rel="noreferrer noopener"
+          >
+            <svg
+              width="40"
+              height="40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.362 30.159c9.434 0 14.594-7.816 14.594-14.594 0-.222 0-.443-.015-.663a10.436 10.436 0 002.559-2.655c-.936.415-1.93.687-2.946.807a5.147 5.147 0 002.255-2.837 10.28 10.28 0 01-3.257 1.245 5.134 5.134 0 00-8.741 4.678A14.563 14.563 0 019.24 10.78a5.133 5.133 0 001.588 6.848 5.091 5.091 0 01-2.328-.642v.065a5.131 5.131 0 004.115 5.028 5.122 5.122 0 01-2.316.088 5.135 5.135 0 004.792 3.562A10.292 10.292 0 017.5 27.855a14.52 14.52 0 007.862 2.3"
+                fill="#1DA1F2"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // https://emailregex.com/
+      const validEmailRegex = new RegExp(
+        /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      );
+
+      function submitEmail(form) {
+        const input = form.querySelector("input");
+        const button = form.querySelector("button");
+        const errorText = form.querySelector(".Form__error-text");
+
+        const email = input.value;
+
+        function showErrorText(message) {
+          button.innerText = "join";
+          errorText.innerText = message;
+        }
+
+        const isValidEmail = validEmailRegex.test(email);
+        if (!isValidEmail) {
+          showErrorText("Please fill in a valid email");
+          return;
+        }
+
+        // Reset error text
+        errorText.innerText = "";
+
+        // Set button to loading state
+        button.classList.add(".Form__button--loading");
+        button.innerText = "...";
+
+        fetch("http://localhost:3000/api/signup", {
+          method: "POST",
+          headers: new Headers({ "Content-Type": "application/json" }),
+          body: JSON.stringify({ email }),
+        })
+          .then((response) => response.json())
+          .then((response) => {
+            if (response.success) {
+              window.location.href = "success.html";
+            } else {
+              if(response.error === "EMAIL_ALREADY_EXISTS") {
+                showErrorText("Email is already in use");
+              } else {
+                showErrorText("An unexpected error happened, please try again");
+              }
+            }
+          })
+          .catch((error) => {
+            showErrorText("An unexpected error happened, please try again");
+          });
+      }
+    </script>
+  </body>
+</html>
