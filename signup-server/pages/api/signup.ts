@@ -9,22 +9,8 @@ import Cors from "cors";
 // Initializing the cors middleware
 const cors = Cors({
   origin: process.env.NODE_ENV === "production" ? "https://toptile.life" : "*",
-  methods: ["GET", "POST", "HEAD"],
+  methods: ["POST", "HEAD"],
 });
-
-// Helper method to wait for a middleware to execute before continuing
-// And to throw an error when an error happens in a middleware
-function runMiddleware(req, res, fn) {
-  return new Promise((resolve, reject) => {
-    fn(req, res, (result) => {
-      if (result instanceof Error) {
-        return reject(result);
-      }
-
-      return resolve(result);
-    });
-  });
-}
 
 // Load Signup email data
 const signupEmailPath = path.resolve(
@@ -111,5 +97,19 @@ async function sendSignupSuccessEmail(
     subject: "Welcome to Toptile !",
     text: `Welcome to Toptile !\n\nI'm thrilled to have you on board.\n\nMy goal is to make Toptile the reference community for top percentile people. The community you and me wish had existed for a long time.\n\nI have so many ideas about how to make this a reality. And at the same time no strong opinion about what, when, how, or where. I want you to shape the community and influence its direction.\n\nClick the following button to join our Discord server and start the conversation:\n\n${inviteLink}\n\nAs an appetizer for the tons of content you will hear about in Toptile, two amazing pieces of related content:\n\n- 95%-ile isn't that good (https://danluu.com/p95-skill/), by Dan Luu\n3-2-1 Thursday newsletter (https://jamesclear.com/3-2-1), by James Clear\n\nI'm looking forward hearing from you,\n\nThis is only the beginning\n\n- Enzo Ferey`,
     html: signupEmailHtml.split("DISCORD_INVITE_LINK").join(inviteLink),
+  });
+}
+
+// Helper method to wait for a middleware to execute before continuing
+// And to throw an error when an error happens in a middleware
+function runMiddleware(req, res, fn) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result) => {
+      if (result instanceof Error) {
+        return reject(result);
+      }
+
+      return resolve(result);
+    });
   });
 }
