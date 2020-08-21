@@ -71,14 +71,14 @@ async function createNewUser(email: string): Promise<void> {
 
 async function generateInviteLink(): Promise<string> {
   const inviteResponse = await axios.post(
-    `https://discord.com/api/channels/${process.env.INVITE_CHANNEL_ID}/invites`,
+    `https://discord.com/api/channels/${process.env.DISCORD_INVITE_CHANNEL_ID}/invites`,
     {
       max_uses: 1,
       unique: true,
     },
     {
       headers: {
-        Authorization: `Bot ${process.env.INVITE_BOT_TOKEN}`,
+        Authorization: `Bot ${process.env.DISCORD_INVITE_BOT_TOKEN}`,
       },
     }
   );
