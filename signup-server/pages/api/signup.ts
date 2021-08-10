@@ -8,7 +8,7 @@ import Cors from "cors";
 
 // Initializing the cors middleware
 const cors = Cors({
-  origin: process.env.NODE_ENV === "production" ? "https://toptile.life" : "*",
+  origin: process.env.NODE_ENV === "production" ? "https://toptile-life.vercel.app" : "*",
   methods: ["POST", "HEAD"],
 });
 
